@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style/main.css">
+	<title>Тестовое проверочное задание</title>
+</head>
+<body>
+	<div class="containerForm">
+		<!-- Форма для выбора и отправки файла -->
+		<form name="send_file" id="sendFile" enctype="mutipart/form-data"> 
+			<label>Загрузка файла CSV:</label><br>
+			<input type="file" name="user_file">
+			<button type="button" id="sendFileBtn">Импортировать файл</button>
+		</form><br>
+		<!-- Форма для выборки данных -->
+		<form name="send_data" id="sendData" method="POST">
+			<label>Укажите возраст с</label>
+			<input type="text" name="age_with"> по
+			<input type="text" name="age_on">
+			<select name ="change_data">
+				<option value="easy">Простая выборка по всем полям</option>
+				<option value="group">Сгруппировать "Кол-во людей по странам"</option>
+			</select>
+			<select class="selectMenu" multiple name ="citizenship[]" size="2">
+				<option value="Россия" selected>Россия</option>
+				<option value="Белоруссия">Белоруссия</option>
+				<option value="Киргизстан">Киргизстан</option>
+				<option value="Казахстан">Казахстан</option>
+				<option value="Армения">Армения</option>
+				<option value="Молдова">Молдова</option>
+			</select>
+			<button type="button" id="sendDataBtn" style="margin-left: 15px;">Отправить запрос</button>
+		</form>
+	</div>
+	<div >
+		<h4>Сообщение:</h4>
+		<div class="message"></div>
+	</div>
+	<div>
+		<h4>Результат выборки данных:</h4>
+		<div class="resultData"></div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+	<script src="js/ajax.js"></script>
+</body>
+</html>
